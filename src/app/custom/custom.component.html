@@ -1,4 +1,3 @@
-<script src="../app.component.spec.ts"></script>
 <ngx-charts-chart
   [view]="[width, height]"
   [showLegend]="legend"
@@ -21,44 +20,56 @@
   <svg:g [attr.transform]="transform" class="area-chart chart">
 
     <svg:g ngx-charts-x-axis
-           *ngIf="xAxis"
-           class="assex"
-           [xScale]="xScale"
-           [dims]="dims"
-           [showGridLines]="showGridLines"
-           [showLabel]="showXAxisLabel"
-           [labelText]="xAxisLabel"
-           [tickFormatting]="xAxisTickFormatting"
-           [ticks]="xAxisTicks"
-           (dimensionsChanged)="updateXAxisHeight($event)">
+      class="xAxisLegend"
+      [xScale]="xScale"
+      [dims]="dims"
+      [showGridLines]="showGridLines"
+      [showLabel]="showXAxisLabel"
+      [labelText]="xAxisLabel"
+      [tickFormatting]="xAxisTickFormatting"
+      [ticks]="[1,5,10,15,20]"
+      [xOrient]="'top'"
+      (dimensionsChanged)="updateXAxisHeight($event)">
     </svg:g>
 
     <svg:g ngx-charts-y-axis
-           *ngIf="yAxis"
-           [yScale]="yScale"
-           [dims]="dims"
-           [showGridLines]="showGridLines"
-           [showLabel]="showYAxisLabel"
-           [labelText]="yAxisLabel"
-           [tickFormatting]="yAxisTickFormatting"
-           [ticks]="yAxisTicks"
-           (dimensionsChanged)="updateYAxisWidth($event)">
+      class="yAxisLegend"
+      [yScale]="yScale"
+      [dims]="dims"
+      [showGridLines]="showGridLines"
+      [showLabel]="showYAxisLabel"
+      [labelText]="yAxisLabel"
+      [tickFormatting]="yAxisTickFormatting"
+      [ticks]="yAxisTicks"
+      (dimensionsChanged)="updateYAxisWidth($event)">
     </svg:g>
 
     <svg:g [attr.clip-path]="clipPath">
 
       <svg:g *ngFor="let series of results; trackBy:trackBy" >
+        <svg:g ngx-charts-line-series
+          [xScale]="xScale"
+          [yScale]="yScale"
+          [colors]="colors"
+          [data]="series"
+          [activeEntries]="activeEntries"
+          [scaleType]="scaleType"
+          [curve]="curve"
+          [animations]="false"
+          stroke="3"
+        />
         <svg:g ngx-charts-area-series
-               [xScale]="xScale"
-               [yScale]="yScale"
-               [baseValue]="baseValue"
-               [colors]="colors"
-               [data]="series"
-               [activeEntries]="activeEntries"
-               [scaleType]="scaleType"
-               [gradient]="gradient"
-               [curve]="curve"
-               [animations]="animations"
+          class="chartArea"
+          [xScale]="xScale"
+          [yScale]="yScale"
+          [baseValue]="baseValue"
+          [colors]="colors"
+          [data]="series"
+          [activeEntries]="activeEntries"
+          [scaleType]="scaleType"
+          opacity=".5"
+          [curve]="curve"
+          [animations]="false"
 
         />
       </svg:g>

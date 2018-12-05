@@ -10,62 +10,62 @@ export class AppComponent {
 
   dataGraph = [
     {
-      'name': '€',
+      'name': 'value',
       'series': [
         {
           'value': 0,
-          'name': new Date('2018-09-1')
+          'name': 1
         },
         {
           'value': 980,
-          'name': new Date('2018-09-2')
+          'name': 2
         },
         {
           'value': 980.3,
-          'name': new Date('2018-09-3')
+          'name': 3
         },
         {
           'value': 980.4,
-          'name': new Date('2018-09-4')
+          'name': 4
         },
         {
           'value': 980.6,
-          'name': new Date('2018-09-5')
+          'name': 5
         }
         ,
         {
           'value': 980.6,
-          'name': new Date('2018-09-6')
+          'name': 6
         }
         ,
         {
           'value': 980.6,
-          'name': new Date('2018-09-7')
+          'name': 7
         }
         ,
         {
           'value': 980.6,
-          'name': new Date('2018-09-8')
+          'name': 8
         }
         ,
         {
           'value': 980.6,
-          'name': new Date('2018-09-9')
+          'name': 9
         }
         ,
         {
           'value': 980.6,
-          'name': new Date('2018-09-10')
+          'name': 10
         }
         ,
         {
           'value': 980.6,
-          'name': new Date('2018-09-11')
+          'name': 11
         }
         ,
         {
           'value': 980.6,
-          'name': new Date('2018-09-12')
+          'name': 12
         }
       ]
     }
@@ -73,7 +73,7 @@ export class AppComponent {
 
   colorScheme = {domain: ['#007AB3']};
   data: any[] = this.dataGraph;
-  gradient = true;
+  gradient = false;
   showXAxis = true;
   showYAxis = true;
   showLegend = false;
@@ -84,9 +84,9 @@ export class AppComponent {
   autoScale = true;
   timeline = false;
   yScaleMax = 1500; // should be dynamic
-  xScaleMax = new Date('2018-09-30'); // should be dynamic
+  xScaleMax = 15; // should be dynamic
   yScaleMin = 0;
-  xScaleMin = new Date('2018-09-1');
+  xScaleMin = 1;
   showGridLines = true;
   curve = shape.curveLinear;
 
