@@ -1,6 +1,5 @@
 
 :host ::ng-deep .ngx-charts {
-  fill: red;
   border: solid 1px #ccc;
 }
 
@@ -10,9 +9,44 @@
     font-family: Helvetica;
     fill: #D9D9D9;
   }
+  .xAxisLegend{
+    transform: translateY(-430px);
+    z-index: 1;
+    display: block;
+  }
+  .yAxisLegend{
+  }
+  .filled-area{
+  }
+  .ngx-charts{
+    height: 500px;
+  }
+  .area-chart {
+    transform: translate(60px, 100px);
+  }
+  .gridline-path {
+    stroke: #ddd;
+    stroke-width: 1;
+    fill: none;
+  }
+  .gridline-path-vertical{
+    display: none;
+  }
+
+  .tooltip-anchor {
+    fill: rgb(0,0,0);
+    height: 420px;
+  }
+  rect.tooltip-area{
+  }
+  .circleTooltip{
+
+  }
+  .tooltip-block{
+    transform: translateY(45px);
+  }
 }
 .chartArea{
   fill: #00f;
 }
-
 

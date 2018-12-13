@@ -22,6 +22,7 @@ import { getUniqueXDomainValues } from '@swimlane/ngx-charts/release/common/doma
   templateUrl: './custom.component.html',
   styleUrls: ['./custom.component.scss']
 })
+
 export class CustomChartComponent extends BaseChartComponent {
   @Input() legend;
   @Input() legendTitle: string = 'Legend';
